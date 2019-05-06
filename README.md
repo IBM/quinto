@@ -1,5 +1,7 @@
 # quinto
 
+[![Build Status](https://travis-ci.com/IBM/quinto.svg?branch=master)](https://travis-ci.com/IBM/quinto)
+[![dependencies Status](https://david-dm.org/ibm/quinto/status.svg)](https://david-dm.org/ibm/quinto)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
