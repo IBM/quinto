@@ -39,7 +39,7 @@ class NearestAncestor {
 
       return result;
     } else {
-      result.element = element.parentElement;
+      result.element = element.parentElement as HTMLElement;
       let parentElementDataAttribute = this.getDataAttribute(result.element);
 
       result.depth = 1;
@@ -50,7 +50,7 @@ class NearestAncestor {
           parentElementDataAttribute === undefined &&
           result.depth < this.threshold
         ) {
-          result.element = result.element.parentElement;
+          result.element = result.element.parentElement as HTMLElement;
           parentElementDataAttribute = this.getDataAttribute(result.element);
           result.depth += 1;
         }

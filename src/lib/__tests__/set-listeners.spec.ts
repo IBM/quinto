@@ -1,4 +1,5 @@
 import { setListeners } from '../set-listeners';
+import Quinto from '../../Quinto';
 
 let map: any;
 
@@ -39,7 +40,7 @@ describe('Listeners', () => {
 });
 
 function setup() {
-  const mockInstance = {
+  const mockInstance: unknown = {
     props: {
       debounce: 500,
       onClick: jest.fn(),
@@ -48,5 +49,5 @@ function setup() {
     targetElement: jest.fn()
   };
 
-  return mockInstance;
+  return mockInstance as Quinto;
 }

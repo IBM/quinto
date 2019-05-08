@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { boundValue } from './utils/bound-value';
 import { getElement } from './lib/get-element';
-import { setListeners } from './lib/set-listeners';
+import { setListeners, EventType } from './lib/set-listeners';
 import { IAncestor } from './lib/NearestAncestor';
 
 interface IQuintoProps {
@@ -16,8 +16,6 @@ interface IQuintoProps {
 interface IQuintoState {
   debounce: number;
 }
-
-type TargetElement = (e: MouseEvent, event: string) => void;
 
 class Quinto extends React.Component<IQuintoProps, IQuintoState> {
   public static defaultProps = {
@@ -47,14 +45,27 @@ class Quinto extends React.Component<IQuintoProps, IQuintoState> {
     return null;
   }
 
-  private targetElement: TargetElement = (e, event) => {
+  public targetElement = (e: MouseEvent, event: EventType) => {
     if (!this.mounted || this.props.paused) {
       return;
     }
 
-    this.props[event](getElement.apply(this, [e.target as HTMLElement]));
+    switch (event) {
+      case 'onClick':
+        if (this.props.onClick) {
+          this.props.onClick(getElement.apply(this, [e.target as HTMLElement]));
+        }
+        break;
+      case 'onMouseOver':
+        if (this.props.onMouseOver) {
+          this.props.onMouseOver(
+            getElement.apply(this, [e.target as HTMLElement])
+          );
+        }
+        break;
+    }
   };
 }
 
 export default Quinto;
-export { IQuintoProps, IQuintoState, TargetElement };
+export { IQuintoProps, IQuintoState };

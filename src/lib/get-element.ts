@@ -1,15 +1,13 @@
 import NearestAncestor from './NearestAncestor';
-import { IQuintoProps } from '../Quinto';
+import Quinto from '..';
 
 let nearestAncestor: NearestAncestor;
 
-function getElement(element: HTMLElement) {
+function getElement(this: Quinto, element: HTMLElement) {
   if (nearestAncestor === undefined) {
-    const props = this.props as IQuintoProps;
-
     nearestAncestor = new NearestAncestor({
-      dataAttribute: props.dataAttribute,
-      threshold: props.threshold
+      dataAttribute: this.props.dataAttribute,
+      threshold: this.props.threshold
     });
   }
 
