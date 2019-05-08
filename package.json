@@ -1,14 +1,9 @@
 {
   "name": "quinto",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "Apache-2.0",
   "description": "React utility library to capture imprecise user interactions in the DOM",
-  "homepage": "https://github.com/IBM/quinto",
-  "bugs": "https://github.com/IBM/quinto/issues",
-  "author": {
-    "name": "Eric Liu",
-    "url": "https://github.com/metonym"
-  },
+  "author": "Eric Liu (https://github.com/metonym)",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -26,7 +21,7 @@
     "@types/enzyme": "3.9.1",
     "@types/enzyme-adapter-react-16": "1.0.5",
     "@types/jest": "24.0.12",
-    "@types/react": "16.8.16",
+    "@types/react": "16.8.17",
     "enzyme": "3.9.0",
     "enzyme-adapter-react-16": "1.12.1",
     "jest": "24.8.0",
@@ -38,6 +33,12 @@
     "tslint-config-prettier": "1.18.0",
     "tslint-react": "4.0.0",
     "typescript": "3.4.5"
+  },
+  "homepage": "https://github.com/IBM/quinto",
+  "bugs": "https://github.com/IBM/quinto/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IBM/quinto.git"
   },
   "keywords": [
     "react",
