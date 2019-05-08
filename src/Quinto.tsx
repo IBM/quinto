@@ -48,7 +48,7 @@ class Quinto extends React.Component<IQuintoProps, IQuintoState> {
   }
 
   private targetElement: TargetElement = (e, event) => {
-    if (this.props.paused) {
+    if (!this.mounted || this.props.paused) {
       return;
     }
 
