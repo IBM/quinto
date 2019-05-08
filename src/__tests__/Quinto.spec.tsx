@@ -4,35 +4,57 @@ import Quinto, { IQuintoState } from '../Quinto';
 import * as listeners from '../lib/set-listeners';
 
 describe('Quinto', () => {
-  beforeEach(() => {
-    jest.spyOn(listeners, 'setListeners');
-  });
-
   it('renders without crashing', () => {
     const wrapper = mount(<Quinto onClick={jest.fn()} />);
-
     global.checkEventListeners(1, 0);
     expect(wrapper.isEmptyRender()).toEqual(true);
   });
 
   it('sets the debounce value correctly', () => {
     const wrapper = mount(<Quinto debounce={5000} />);
-
     const state = wrapper.state() as IQuintoState;
     expect(state.debounce).toEqual(2000);
   });
 
   test('the `paused` prop has the correct behavior', () => {
+    jest.spyOn(listeners, 'setListeners');
+
+    document.body.innerHTML = `
+        <div data-q="{}">
+          <div id="root"></div>
+        </div>
+      `;
+
+    const onClick = jest.fn();
+    const onMouseOver = jest.fn();
+
     const wrapper = mount(
-      <Quinto paused={false} onClick={jest.fn()} onMouseOver={jest.fn()} />
+      <Quinto paused={false} onClick={onClick} onMouseOver={onMouseOver} />
     );
+    const instance = wrapper.instance() as Quinto;
+
+    expect(onClick).not.toHaveBeenCalled();
+    expect(onMouseOver).not.toHaveBeenCalled();
+
+    const e = { target: document.getElementById('root') };
+    // @ts-ignore
+    instance.targetElement(e, 'onClick');
+    expect(onClick).toHaveBeenCalledTimes(1);
 
     expect((listeners.setListeners as any).mock.calls.length).toEqual(1);
 
     global.checkEventListeners(2, 0);
     wrapper.setProps({ paused: true });
 
+    // @ts-ignore
+    instance.targetElement(e, 'onClick');
+    expect(onClick).toHaveBeenCalledTimes(1);
+
     wrapper.setProps({ paused: false });
+
+    // @ts-ignore
+    instance.targetElement(e, 'onClick');
+    expect(onClick).toHaveBeenCalledTimes(2);
 
     wrapper.unmount();
     expect((listeners.setListeners as any).mock.calls.length).toEqual(2);
@@ -65,7 +87,7 @@ describe('Quinto', () => {
       // @ts-ignore
       jest.spyOn(instance, 'targetElement');
 
-      const e: $Override = { target: document.getElementById('root') };
+      const e = { target: document.getElementById('root') };
       // @ts-ignore
       instance.targetElement(e, useCase.event);
       // @ts-ignore

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Quinto from 'quinto';
-import { css } from 'emotion';
 
 class App extends React.Component {
   constructor(props) {
@@ -26,12 +25,14 @@ class App extends React.Component {
           onMouseOver={this.handleClick}
           onClick={this.handleClick}
         />
-        <div
-          className={css`
-            min-height: 100vh;
-            overflow-y: scroll;
-          `}
-        >
+        <div>
+          <div data-q={JSON.stringify({ id: 'text' })}>
+            <div>
+              <div>
+                <div>Text</div>
+              </div>
+            </div>
+          </div>
           <div>
             <div data-root="true">data root</div>
             <div id="root" />

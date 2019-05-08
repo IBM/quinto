@@ -1,13 +1,13 @@
 const debounce = (fn: (...args: $Unknown[]) => void, wait: number) => {
-  let current: boolean = false;
+  let current = false;
 
-  return function() {
+  return function(this: $Unknown) {
     if (!current) {
       current = true;
 
       setTimeout(() => {
         current = false;
-        fn.apply(this, arguments);
+        fn.apply(this, arguments as $Unknown);
       }, wait);
     }
   };

@@ -1,6 +1,7 @@
 import { setListeners } from '../set-listeners';
+import Quinto from '../../Quinto';
 
-let map: $Override;
+let map: any;
 
 jest.useFakeTimers();
 
@@ -19,7 +20,6 @@ describe('Listeners', () => {
 
   test('creates event listeners correctly', () => {
     const mockInstance = setup();
-
     setListeners.apply(mockInstance, [{ type: 'create' }]);
     expect(document.addEventListener).toHaveBeenCalledTimes(2);
     expect(mockInstance.targetElement).toHaveBeenCalledTimes(0);
@@ -27,24 +27,20 @@ describe('Listeners', () => {
     map.click({ target: document.createElement('div') }, 'onClick');
     expect(mockInstance.targetElement).toHaveBeenCalledTimes(1);
 
-    map.click({ target: document.createElement('div') }, 'onMouseOver');
+    map.mouseover({ target: document.createElement('div') }, 'onMouseOver');
     jest.advanceTimersByTime(501);
-
     expect(mockInstance.targetElement).toHaveBeenCalledTimes(2);
   });
 
   test('destroys event listeners correctly', () => {
     const mockInstance = setup();
-
     setListeners.apply(mockInstance, [{ type: 'destroy' }]);
     expect(document.removeEventListener).toHaveBeenCalledTimes(2);
   });
 });
 
 function setup() {
-  const mockInstance = {
-    mounted: true,
-    onScroll: jest.fn(),
+  const mockInstance: unknown = {
     props: {
       debounce: 500,
       onClick: jest.fn(),
@@ -53,5 +49,5 @@ function setup() {
     targetElement: jest.fn()
   };
 
-  return mockInstance;
+  return mockInstance as Quinto;
 }
