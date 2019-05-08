@@ -2,7 +2,6 @@ import { debounce } from '../utils/debounce';
 import { IQuintoProps, TargetElement } from '../Quinto';
 
 function setListeners({ type }: { type: 'create' | 'destroy' }): void {
-  const mounted = this.mounted as boolean;
   const props = this.props as IQuintoProps;
   const targetElement = this.targetElement as TargetElement;
 
@@ -27,9 +26,7 @@ function setListeners({ type }: { type: 'create' | 'destroy' }): void {
         document[EVENT_TYPE](
           LISTENER_EVENT,
           debounce((e: MouseEvent) => {
-            if (mounted) {
-              targetElement(e, event);
-            }
+            targetElement(e, event);
           }, props.debounce)
         );
         break;
