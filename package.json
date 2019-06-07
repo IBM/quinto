@@ -1,8 +1,8 @@
 {
   "name": "quinto",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "license": "Apache-2.0",
-  "description": "React utility library to capture imprecise user interactions in the DOM",
+  "description": "Tiny utility library to capture imprecise user interactions in the DOM",
   "author": "Eric Liu (https://github.com/metonym)",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -10,13 +10,10 @@
     "develop": "rollup -cw",
     "build": "rm -rf lib && rollup -c",
     "test": "jest",
+    "test:tdd": "jest --watch",
     "lint": "tslint --fix -p . -c tslint.json",
     "prettier": "prettier --write 'src/**/*.{ts,tsx}'",
     "prepublishOnly": "run-s test build"
-  },
-  "dependencies": {
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0"
   },
   "devDependencies": {
     "@commitlint/cli": "8.0.0",
@@ -31,6 +28,8 @@
     "jest": "24.8.0",
     "npm-run-all": "4.1.5",
     "prettier": "1.18.2",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
     "rollup": "1.14.3",
     "rollup-plugin-typescript2": "0.21.1",
     "ts-jest": "24.0.2",
@@ -54,7 +53,8 @@
   "keywords": [
     "react",
     "event",
-    "traverse"
+    "traverse",
+    "dom"
   ],
   "files": [
     "lib/"

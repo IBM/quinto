@@ -1,24 +1,19 @@
-import * as listeners from '../lib/set-listeners';
-import Quinto from '../Quinto';
+import { mount } from 'enzyme';
+import * as React from 'react';
+import * as listeners from '../../lib/set-listeners';
+import Quinto, { IQuintoState } from '../Quinto';
 
 describe('Quinto', () => {
   it('renders without crashing', () => {
-    const quinto = new Quinto({
-      dataAttribute: 'q',
-      onClick: jest.fn(),
-      paused: false,
-      threshold: 100
-    });
+    const wrapper = mount(<Quinto onClick={jest.fn()} />);
     global.checkEventListeners(1, 0);
-    expect(quinto.props.dataAttribute).toEqual('q');
-    expect(quinto.props.threshold).toEqual(100);
-    expect(quinto.props.paused).toEqual(false);
-    expect(quinto.props.onClick).toEqual(expect.any(Function));
+    expect(wrapper.isEmptyRender()).toEqual(true);
   });
 
   it('sets the debounce value correctly', () => {
-    const quinto = new Quinto({ debounce: 5000 });
-    expect(quinto.props.debounce).toEqual(2000);
+    const wrapper = mount(<Quinto debounce={5000} />);
+    const state = wrapper.state() as IQuintoState;
+    expect(state.debounce).toEqual(2000);
   });
 
   test('the `paused` prop has the correct behavior', () => {
@@ -33,32 +28,35 @@ describe('Quinto', () => {
     const onClick = jest.fn();
     const onMouseOver = jest.fn();
 
-    const quinto = new Quinto({ paused: false, onClick, onMouseOver });
+    const wrapper = mount(
+      <Quinto paused={false} onClick={onClick} onMouseOver={onMouseOver} />
+    );
+    const instance = wrapper.instance() as Quinto;
 
     expect(onClick).not.toHaveBeenCalled();
     expect(onMouseOver).not.toHaveBeenCalled();
 
     const e = { target: document.getElementById('root') };
     // @ts-ignore
-    quinto.targetElement(e, 'onClick');
+    instance.targetElement(e, 'onClick');
     expect(onClick).toHaveBeenCalledTimes(1);
 
     expect((listeners.setListeners as any).mock.calls.length).toEqual(1);
 
     global.checkEventListeners(2, 0);
-    quinto.pause(true);
+    wrapper.setProps({ paused: true });
 
     // @ts-ignore
-    quinto.targetElement(e, 'onClick');
+    instance.targetElement(e, 'onClick');
     expect(onClick).toHaveBeenCalledTimes(1);
 
-    quinto.pause(false);
+    wrapper.setProps({ paused: false });
 
     // @ts-ignore
-    quinto.targetElement(e, 'onClick');
+    instance.targetElement(e, 'onClick');
     expect(onClick).toHaveBeenCalledTimes(2);
 
-    quinto.destroy();
+    wrapper.unmount();
     expect((listeners.setListeners as any).mock.calls.length).toEqual(2);
     global.checkEventListeners(2, 2);
   });
@@ -83,16 +81,17 @@ describe('Quinto', () => {
         [useCase.event]: mockFn
       };
 
-      const quinto = new Quinto(props);
+      const wrapper = mount(<Quinto {...props} />);
+      const instance = wrapper.instance() as Quinto;
 
       // @ts-ignore
-      jest.spyOn(quinto, 'targetElement');
+      jest.spyOn(instance, 'targetElement');
 
       const e = { target: document.getElementById('root') };
       // @ts-ignore
-      quinto.targetElement(e, useCase.event);
+      instance.targetElement(e, useCase.event);
       // @ts-ignore
-      expect(quinto.targetElement).toHaveBeenCalledTimes(1);
+      expect(instance.targetElement).toHaveBeenCalledTimes(1);
       expect(mockFn).toHaveBeenCalledTimes(1);
       expect(mockFn.mock.calls[0][0]).toEqual({
         data: expect.any(Object),

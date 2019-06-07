@@ -1,9 +1,10 @@
+import Quinto from '../Quinto';
+import QuintoReact from '../react/Quinto';
 import NearestAncestor from './NearestAncestor';
-import Quinto from '..';
 
 let nearestAncestor: NearestAncestor;
 
-function getElement(this: Quinto, element: HTMLElement) {
+function getElement(this: QuintoReact | Quinto, element: HTMLElement) {
   if (nearestAncestor === undefined) {
     nearestAncestor = new NearestAncestor({
       dataAttribute: this.props.dataAttribute,

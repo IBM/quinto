@@ -1,5 +1,5 @@
-import { setListeners } from '../set-listeners';
 import Quinto from '../../Quinto';
+import { setListeners } from '../set-listeners';
 
 let map: any;
 

@@ -15,7 +15,7 @@ export default {
       }
     }
   ],
-  external: Object.keys(pkg.dependencies),
+  external: ['react', 'react-dom'],
   plugins: [
     typescript({
       cacheRoot: './.cache',

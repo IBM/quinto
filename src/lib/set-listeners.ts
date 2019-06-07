@@ -1,8 +1,9 @@
-import { debounce } from '../utils/debounce';
 import Quinto from '../Quinto';
+import QuintoReact from '../react/Quinto';
+import { debounce } from '../utils/debounce';
 
 function setListeners(
-  this: Quinto,
+  this: QuintoReact | Quinto,
   { type }: { type: 'create' | 'destroy' }
 ): void {
   const props = this.props;
