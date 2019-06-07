@@ -3,8 +3,16 @@ import Quinto from '../Quinto';
 
 describe('Quinto', () => {
   it('renders without crashing', () => {
-    const quinto = new Quinto({ onClick: jest.fn() });
+    const quinto = new Quinto({
+      dataAttribute: 'q',
+      onClick: jest.fn(),
+      paused: false,
+      threshold: 100
+    });
     global.checkEventListeners(1, 0);
+    expect(quinto.props.dataAttribute).toEqual('q');
+    expect(quinto.props.threshold).toEqual(100);
+    expect(quinto.props.paused).toEqual(false);
     expect(quinto.props.onClick).toEqual(expect.any(Function));
   });
 
