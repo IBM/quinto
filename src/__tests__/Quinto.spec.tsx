@@ -1,7 +1,7 @@
-import * as React from 'react';
 import { mount } from 'enzyme';
-import Quinto, { IQuintoState } from '../Quinto';
+import * as React from 'react';
 import * as listeners from '../lib/set-listeners';
+import Quinto, { IQuintoState } from '../Quinto';
 
 describe('Quinto', () => {
   it('renders without crashing', () => {

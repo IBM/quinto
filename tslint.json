@@ -2,8 +2,10 @@
   "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
   "rules": {
     "jsx-wrap-multiline": false,
-    "no-implicit-dependencies": [true, ["enzyme", "enzyme-adapter-react-16"]],
-    "ordered-imports": false
+    "no-implicit-dependencies": [
+      true,
+      ["react", "enzyme", "enzyme-adapter-react-16"]
+    ]
   },
   "linterOptions": {
     "exclude": ["node_modules/**", "example/**", "lib/**"]

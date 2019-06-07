@@ -1,5 +1,5 @@
-import { debounce } from '../utils/debounce';
 import Quinto from '../Quinto';
+import { debounce } from '../utils/debounce';
 
 function setListeners(
   this: Quinto,

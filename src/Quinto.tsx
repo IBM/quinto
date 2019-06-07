@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { boundValue } from './utils/bound-value';
 import { getElement } from './lib/get-element';
-import { setListeners, EventType } from './lib/set-listeners';
 import { IAncestor } from './lib/NearestAncestor';
+import { EventType, setListeners } from './lib/set-listeners';
+import { boundValue } from './utils/bound-value';
 
 interface IQuintoProps {
   dataAttribute: string;

@@ -1,5 +1,5 @@
-import NearestAncestor from './NearestAncestor';
 import Quinto from '..';
+import NearestAncestor from './NearestAncestor';
 
 let nearestAncestor: NearestAncestor;
 
