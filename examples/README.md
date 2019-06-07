@@ -1,4 +1,4 @@
 # quinto/examples
 
-- [react/](React example)
-- [vanilla/](vanilla JavaScript example)
+- [react](react/)
+- [vanilla](vanilla/)
