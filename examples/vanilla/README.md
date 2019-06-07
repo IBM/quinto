@@ -1,6 +1,6 @@
-# quinto/example
+# examples/vanilla
 
-> Example using React and Parcel
+> Example using vanilla JavaScript
 
 ### Getting Started
 
