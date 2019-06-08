@@ -9,7 +9,7 @@ describe('debounce', () => {
 
   it('does not call the debounced function', () => {
     const fn = jest.fn();
-    const result = debounce(fn, 0);
+    debounce(fn, 0);
 
     jest.advanceTimersByTime(100);
     expect(fn).toHaveBeenCalledTimes(0);
@@ -17,7 +17,7 @@ describe('debounce', () => {
 
   it('calls the debounced function once', () => {
     const fn = jest.fn();
-    const result = debounce(fn, 0);
+    const result = debounce(fn, 0) as $Unknown;
 
     result();
     jest.advanceTimersByTime(100);
