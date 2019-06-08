@@ -1,6 +1,18 @@
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
+declare global {
+  namespace NodeJS {
+    // tslint:disable-next-line: interface-name
+    interface Global {
+      checkEventListeners: (
+        addEventListenerCalled: number,
+        removeEventListenerCalled: number
+      ) => void;
+    }
+  }
+}
+
 configure({ adapter: new Adapter() });
 
 global.checkEventListeners = (add, remove) => {

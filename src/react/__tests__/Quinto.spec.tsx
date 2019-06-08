@@ -37,27 +37,23 @@ describe('Quinto', () => {
     expect(onMouseOver).not.toHaveBeenCalled();
 
     const e = { target: document.getElementById('root') };
-    // @ts-ignore
-    instance.targetElement(e, 'onClick');
-    expect(onClick).toHaveBeenCalledTimes(1);
 
-    expect((listeners.setListeners as any).mock.calls.length).toEqual(1);
+    instance.targetElement(e as MouseEvent, 'onClick');
+    expect(onClick).toHaveBeenCalledTimes(1);
+    expect((listeners.setListeners as $Unknown).mock.calls.length).toEqual(1);
 
     global.checkEventListeners(2, 0);
     wrapper.setProps({ paused: true });
 
-    // @ts-ignore
-    instance.targetElement(e, 'onClick');
+    instance.targetElement(e as MouseEvent, 'onClick');
     expect(onClick).toHaveBeenCalledTimes(1);
 
     wrapper.setProps({ paused: false });
-
-    // @ts-ignore
-    instance.targetElement(e, 'onClick');
+    instance.targetElement(e as MouseEvent, 'onClick');
     expect(onClick).toHaveBeenCalledTimes(2);
 
     wrapper.unmount();
-    expect((listeners.setListeners as any).mock.calls.length).toEqual(2);
+    expect((listeners.setListeners as $Unknown).mock.calls.length).toEqual(2);
     global.checkEventListeners(2, 2);
   });
 
@@ -84,13 +80,14 @@ describe('Quinto', () => {
       const wrapper = mount(<Quinto {...props} />);
       const instance = wrapper.instance() as Quinto;
 
-      // @ts-ignore
       jest.spyOn(instance, 'targetElement');
 
       const e = { target: document.getElementById('root') };
-      // @ts-ignore
-      instance.targetElement(e, useCase.event);
-      // @ts-ignore
+
+      instance.targetElement(
+        e as MouseEvent,
+        useCase.event as listeners.EventType
+      );
       expect(instance.targetElement).toHaveBeenCalledTimes(1);
       expect(mockFn).toHaveBeenCalledTimes(1);
       expect(mockFn.mock.calls[0][0]).toEqual({

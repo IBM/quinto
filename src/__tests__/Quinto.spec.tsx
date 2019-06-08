@@ -39,27 +39,23 @@ describe('Quinto', () => {
     expect(onMouseOver).not.toHaveBeenCalled();
 
     const e = { target: document.getElementById('root') };
-    // @ts-ignore
-    quinto.targetElement(e, 'onClick');
-    expect(onClick).toHaveBeenCalledTimes(1);
 
-    expect((listeners.setListeners as any).mock.calls.length).toEqual(1);
+    quinto.targetElement(e as MouseEvent, 'onClick');
+    expect(onClick).toHaveBeenCalledTimes(1);
+    expect((listeners.setListeners as $Unknown).mock.calls.length).toEqual(1);
 
     global.checkEventListeners(2, 0);
     quinto.pause(true);
 
-    // @ts-ignore
-    quinto.targetElement(e, 'onClick');
+    quinto.targetElement(e as MouseEvent, 'onClick');
     expect(onClick).toHaveBeenCalledTimes(1);
 
     quinto.pause(false);
-
-    // @ts-ignore
-    quinto.targetElement(e, 'onClick');
+    quinto.targetElement(e as MouseEvent, 'onClick');
     expect(onClick).toHaveBeenCalledTimes(2);
 
     quinto.destroy();
-    expect((listeners.setListeners as any).mock.calls.length).toEqual(2);
+    expect((listeners.setListeners as $Unknown).mock.calls.length).toEqual(2);
     global.checkEventListeners(2, 2);
   });
 
@@ -85,13 +81,14 @@ describe('Quinto', () => {
 
       const quinto = new Quinto(props);
 
-      // @ts-ignore
       jest.spyOn(quinto, 'targetElement');
 
       const e = { target: document.getElementById('root') };
-      // @ts-ignore
-      quinto.targetElement(e, useCase.event);
-      // @ts-ignore
+
+      quinto.targetElement(
+        e as MouseEvent,
+        useCase.event as listeners.EventType
+      );
       expect(quinto.targetElement).toHaveBeenCalledTimes(1);
       expect(mockFn).toHaveBeenCalledTimes(1);
       expect(mockFn.mock.calls[0][0]).toEqual({
