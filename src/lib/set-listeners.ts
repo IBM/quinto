@@ -30,7 +30,7 @@ function setListeners(
         document[EVENT_TYPE](
           LISTENER_EVENT,
           debounce(e => {
-            targetElement(e, event);
+            targetElement(e as MouseEvent, event);
           }, props.debounce)
         );
         break;
