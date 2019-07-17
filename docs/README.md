@@ -1,4 +1,4 @@
-# quinto/documentation
+# quinto/docs
 
 > Documentation for [quinto](../).
 
