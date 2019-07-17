@@ -42,6 +42,15 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
+  "jest": {
+    "preset": "ts-jest",
+    "setupFilesAfterEnv": [
+      "<rootDir>src/setupTests.ts"
+    ],
+    "testMatch": [
+      "<rootDir>src/**/*.(spec|test).{ts,tsx}"
+    ]
+  },
   "homepage": "https://github.com/IBM/quinto",
   "bugs": "https://github.com/IBM/quinto/issues",
   "repository": {
