@@ -42,6 +42,11 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
+  "prettier": {
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true
+  },
   "jest": {
     "preset": "ts-jest",
     "setupFilesAfterEnv": [
