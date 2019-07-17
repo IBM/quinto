@@ -10,6 +10,8 @@ Quinto captures imprecise user interactions in the DOM by adding an event listen
 
 The purpose is to reduce the boilerplate in assigning event handlers to individual elements.
 
+## [Changelog](CHANGELOG.md)
+
 ## Install
 
 ```bash
