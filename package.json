@@ -56,6 +56,11 @@
       "<rootDir>src/**/*.(spec|test).{ts,tsx}"
     ]
   },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
   "resolutions": {
     "**/**/lodash": "^4.17.12",
     "**/**/mixin-deep": "^2.0.1",
