@@ -21,6 +21,11 @@ describe('Quinto', () => {
     expect(quinto.props.debounce).toEqual(2000);
   });
 
+  it('sets the paused value correctly', () => {
+    const quinto = new Quinto({ paused: true });
+    expect(quinto.props.paused).toEqual(true);
+  });
+
   test('the `paused` prop has the correct behavior', () => {
     jest.spyOn(listeners, 'setListeners');
 

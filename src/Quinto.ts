@@ -46,7 +46,7 @@ class Quinto {
       this.props.onMouseOver = props.onMouseOver;
     }
 
-    if (props.paused) {
+    if (props.paused !== undefined) {
       this.props.paused = props.paused;
     }
 
