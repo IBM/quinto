@@ -9,7 +9,7 @@ Quinto captures imprecise user interactions in the DOM by adding an event listen
 
 The purpose is to reduce the boilerplate in assigning event handlers to individual elements.
 
-## [Docs](docs/) · [Changelog](CHANGELOG.md) · [Contributing](CONTRIBUTING.md)
+## [Changelog](CHANGELOG.md)
 
 ## Install
 
@@ -75,9 +75,17 @@ const quinto = new Quinto({
 });
 ```
 
-## Example
+## Documentation
+
+See [docs](docs/) for API documentation.
+
+## Examples
 
 To run the [examples](examples/), follow the steps listed in the subfolder [README](examples/README.md).
+
+## Contributing
+
+Read the [contributing guidelines](CONTRIBUTING.md).
 
 ## License
 
