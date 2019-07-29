@@ -3,13 +3,13 @@
 [![NPM](https://img.shields.io/npm/v/quinto.svg?color=blue)](https://npmjs.com/package/quinto)
 [![Build Status](https://travis-ci.com/IBM/quinto.svg?branch=master)](https://travis-ci.com/IBM/quinto)
 
-> Tiny utility library to capture imprecise user interactions in the DOM
+> Tiny utility library to capture imprecise user interactions in the DOM.
 
 Quinto captures imprecise user interactions in the DOM by adding an event listener to the document body for `click` and `mouseover` event types. When an event is captured, the library walks the DOM until it finds the first nearest ancestor assigned as a landmark.
 
 The purpose is to reduce the boilerplate in assigning event handlers to individual elements.
 
-## [Changelog](CHANGELOG.md) · [Documentation](docs/)
+## [Docs](docs/) · [Changelog](CHANGELOG.md) · [Contributing](CONTRIBUTING.md)
 
 ## Install
 
