@@ -36,6 +36,9 @@
     "tslint-react": "4.0.0",
     "typescript": "3.5.3"
   },
+  "engines": {
+    "node": ">=10"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint && pretty-quick --staged",
