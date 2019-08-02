@@ -2,7 +2,7 @@
   "name": "quinto",
   "version": "0.3.0",
   "license": "Apache-2.0",
-  "description": "Tiny utility library to capture imprecise user interactions in the DOM",
+  "description": "Utility to capture imprecise user interactions in the DOM",
   "author": "Eric Liu (https://github.com/metonym)",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
