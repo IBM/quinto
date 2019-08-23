@@ -19,7 +19,7 @@
     "@commitlint/config-conventional": "^8.1.0",
     "@types/enzyme": "^3.10.3",
     "@types/enzyme-adapter-react-16": "^1.0.5",
-    "@types/jest": "^24.0.17",
+    "@types/jest": "^24.0.18",
     "@types/react": "^16.9.2",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
@@ -30,7 +30,7 @@
     "react": "^16.x",
     "react-dom": "^16.x",
     "ts-jest": "^24.0.2",
-    "tslint": "^5.18.0",
+    "tslint": "^5.19.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.0.0",
     "typescript": "^3.5.3"
