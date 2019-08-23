@@ -20,9 +20,7 @@ yarn add quinto
 
 The library is currently implemented in React and vanilla JavaScript.
 
-**React**
-
-The default import is the React implementation.
+### React
 
 ```jsx
 import * as React from 'react';
@@ -60,9 +58,7 @@ class App extends React.Component {
 }
 ```
 
-**Vanilla**
-
-For the vanilla implementation, import the library as such:
+### Vanilla
 
 ```js
 import { Quinto } from 'quinto';
@@ -86,7 +82,7 @@ To run the [examples](examples/), follow the steps listed in the subfolder [READ
 
 ## Contributing
 
-Read the [contributing guidelines](CONTRIBUTING.md).
+See the [contributing guidelines](CONTRIBUTING.md).
 
 ## License
 
@@ -97,4 +93,4 @@ Read the [contributing guidelines](CONTRIBUTING.md).
 [build]: https://travis-ci.com/ibm/quinto.svg?branch=master
 [build-badge]: https://travis-ci.com/ibm/quinto
 [codecov]: https://codecov.io/gh/ibm/quinto
-[codecov-shield]: https://img.shields.io/codecov/c/github/ibm/quinto.svg
+[codecov-shield]: https://codecov.io/gh/ibm/quinto/branch/develop/graphs/badge.svg
