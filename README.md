@@ -93,4 +93,4 @@ See the [contributing guidelines](CONTRIBUTING.md).
 [build]: https://travis-ci.com/ibm/quinto.svg?branch=master
 [build-badge]: https://travis-ci.com/ibm/quinto
 [codecov]: https://codecov.io/gh/ibm/quinto
-[codecov-shield]: https://codecov.io/gh/ibm/quinto/branch/develop/graphs/badge.svg
+[codecov-shield]: https://img.shields.io/codecov/c/github/ibm/quinto.svg
