@@ -1,12 +1,8 @@
 # Contributing
 
-## Getting Started
+## Prerequisites
 
-### Prerequisites
-
-[node](https://nodejs.org/en/)(version >=10) and [yarn](https://yarnpkg.com/en/docs/install#mac-stable) are required to install and run this project.
-
-For MacOS, run the following commands:
+For MacOS, prerequisites include [homebrew](https://docs.brew.sh/Installation), [node](https://nodejs.org/en/download/package-manager/#macos) and [yarn](https://yarnpkg.com/en/docs/install#mac-stable).
 
 ```bash
 # installs homebrew
@@ -15,6 +11,10 @@ For MacOS, run the following commands:
 # installs both yarn and node (if node is not already installed)
 brew install yarn
 ```
+
+---
+
+## Getting Started
 
 ### Install
 
