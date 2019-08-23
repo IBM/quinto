@@ -64,11 +64,6 @@
       "@commitlint/config-conventional"
     ]
   },
-  "resolutions": {
-    "**/**/lodash": "^4.17.12",
-    "**/**/mixin-deep": "^2.0.1",
-    "**/**/set-value": "^3.0.1"
-  },
   "homepage": "https://github.com/IBM/quinto",
   "bugs": "https://github.com/IBM/quinto/issues",
   "repository": {
