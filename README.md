@@ -6,11 +6,9 @@
 
 > Utility to capture imprecise user interactions in the DOM.
 
-Quinto captures imprecise user interactions in the DOM by adding an event listener to the document body for `click` and `mouseover` event types. When an event is captured, the library walks the DOM until it finds the first nearest ancestor assigned as a landmark.
+Quinto adds an event listener to the document body for `click` and `mouseover` event types. When an event is captured, the library walks the DOM until it finds the first nearest ancestor assigned as a landmark.
 
 The purpose is to reduce boilerplate in assigning event handlers to individual elements.
-
-## [Changelog](CHANGELOG.md)
 
 ## Install
 
@@ -83,6 +81,8 @@ See [docs](docs/) for API documentation.
 ## Examples
 
 To run the [examples](examples/), follow the steps listed in the subfolder [README](examples/README.md).
+
+## [Changelog](CHANGELOG.md)
 
 ## Contributing
 
