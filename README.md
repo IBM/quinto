@@ -74,9 +74,7 @@ const quinto = new Quinto({
 
 See [docs](docs/) for API documentation.
 
-## Examples
-
-To run the [examples](examples/), follow the steps listed in the subfolder [README](examples/README.md).
+## [Examples](examples/)
 
 ## [Changelog](CHANGELOG.md)
 
