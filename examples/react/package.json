@@ -7,7 +7,7 @@
     "build": "rm-rf dist && parcel build src/index.html"
   },
   "dependencies": {
-    "quinto": "../../lib",
+    "quinto": "^0.3.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },

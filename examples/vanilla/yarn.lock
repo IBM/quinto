@@ -4177,8 +4177,10 @@ querystring@0.2.0:
   resolved "https://registry.npmjs.org/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
   integrity sha1-sgmEkgO7Jd+CDadW50cAWHhSFiA=
 
-quinto@../../lib:
-  version "0.0.0"
+quinto@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.npmjs.org/quinto/-/quinto-0.3.0.tgz#8e9ae219836fa8a3370212351f145c13006a69ab"
+  integrity sha512-NPAC/T+WdPc9/z7Mro0RGciDA5r4Rt5c0bszCzzUzrq1a+q0M59ujGwvIx6wjk9K1djXX/i3FgnorIuYPhkx1g==
 
 quote-stream@^1.0.1, quote-stream@~1.0.2:
   version "1.0.2"
