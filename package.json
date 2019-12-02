@@ -9,7 +9,6 @@
   "scripts": {
     "develop": "tsc -w",
     "build": "rm -rf lib && tsc -p tsconfig.prod.json",
-    "lint": "tslint --fix -p . -c tslint.json",
     "test": "jest --coverage",
     "test:tdd": "jest --watch",
     "prepublishOnly": "yarn build"
@@ -25,6 +24,7 @@
     "enzyme-adapter-react-16": "^1.14.0",
     "husky": "^3.1.0",
     "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
     "react": "^16.x",
@@ -40,10 +40,16 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint && pretty-quick --staged",
+      "pre-commit": "lint-staged && pretty-quick --staged",
       "pre-push": "yarn test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "tslint --fix -p .",
+      "git add"
+    ]
   },
   "prettier": {
     "tabWidth": 2,
