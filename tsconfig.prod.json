@@ -1,4 +1,0 @@
-{
-  "extends": ".",
-  "exclude": ["src/**/__tests__/**", "src/setupTests.ts"]
-}
