@@ -29,7 +29,7 @@
     "pretty-quick": "^2.0.1",
     "react": "^16.x",
     "react-dom": "^16.x",
-    "ts-jest": "^25.3.0",
+    "ts-jest": "^25.4.0",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.2.0",
